@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="324" height="720" viewBox="0 0 324 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="324" height="720" rx="38" fill="#0b0b0b" />
+  <rect x="18" y="18" width="288" height="672" rx="22" fill="#0f0f0f" />
+  <!-- speaker -->
+  <rect x="142" y="10" width="40" height="4" rx="2" fill="#1b1b1b" />
+  <!-- home indicator -->
+  <rect x="120" y="690" width="84" height="6" rx="3" fill="#171717" />
+</svg>
