@@ -1,68 +1,97 @@
+
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Search, Bell } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+    
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+const navLinks = [
+    { href: "#fitur", label: "Fitur" },
+    { href: "#harga", label: "Harga" },
+    { href: "#tema", label: "Tema" },
+    { href: "#kontak", label: "Kontak" },
+  ]
+
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <img src="/logo.svg" alt="RdMoment" className="w-36 h-auto" />
-        </Link>
+    <header
+      className={`
+        fixed top-0 left-0 right-0 z-50 transition-all duration-300
+        ${
+          isScrolled
+            ? "bg-black/80 backdrop-blur-lg border-b border-amber-900/20"
+            : "bg-transparent"
+        }
+      `}
+    >
+      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex h-20 items-center justify-between">
+          
+          {/* Logo - Stylish R + RdMoment */}
+          <Link href="/" className="flex items-baseline gap-0 group">
+            <span className="text-4xl font-serif text-amber-500 tracking-tight group-hover:text-amber-400 transition-colors">
+              R
+            </span>
+            <span className="text-xl font-light text-amber-100 tracking-wide group-hover:text-white transition-colors">
+              RdMoment.
+            </span>
+          </Link>
 
-        <div className="hidden md:flex items-center gap-8">
-          <Link href="#themes" className="text-foreground hover:text-primary transition-colors">
-            Themes
-          </Link>
-          <Link href="#features" className="text-foreground hover:text-primary transition-colors">
-            Features
-          </Link>
-          <Link href="#testimonials" className="text-foreground hover:text-primary transition-colors">
-            Stories
-          </Link>
-          <Link href="/invitations" className="px-5 py-2 rounded-full btn-gold font-medium shadow-md">
-            Create Invitation
-          </Link>
-        </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-sm font-light tracking-wide text-amber-100/80 transition-colors hover:text-amber-400 hover:scale-105 transform duration-200"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-        <div className="flex items-center gap-3">
-          <button className="hidden md:inline-flex items-center p-2 rounded-md text-muted-foreground hover:text-foreground">
-            <Search size={18} />
-          </button>
-          <button className="hidden md:inline-flex items-center p-2 rounded-md text-muted-foreground hover:text-foreground">
-            <Bell size={18} />
-          </button>
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-amber-100/80 hover:text-amber-400 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
 
-        {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden">
-            <div className="flex flex-col gap-4 p-4">
-              <Link href="#themes" className="text-foreground hover:text-primary transition-colors">
-                Themes
-              </Link>
-              <Link href="#features" className="text-foreground hover:text-primary transition-colors">
-                Features
-              </Link>
-              <Link href="#testimonials" className="text-foreground hover:text-primary transition-colors">
-                Stories
-              </Link>
-              <Link
-                href="/invitations"
-                className="px-6 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors font-medium text-center"
-              >
-                Create Invitation
-              </Link>
-            </div>
-          </div>
-        )}
+        </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="absolute top-20 left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-amber-900/20 md:hidden">
+          <div className="flex flex-col p-6 space-y-4">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-3 rounded-md text-base font-light tracking-wide text-amber-100/80 transition-all hover:text-amber-400 hover:bg-amber-900/10 hover:pl-6"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   )
 }
