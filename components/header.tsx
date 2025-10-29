@@ -20,9 +20,8 @@ export default function Header() {
   }, [])
 
 const navLinks = [
-    { href: "#fitur", label: "Fitur" },
-    { href: "#harga", label: "Harga" },
-    { href: "#tema", label: "Tema" },
+    { href: "#features", label: "Fitur" },
+    { href: "#themes", label: "Tema" },
     { href: "#kontak", label: "Kontak" },
   ]
 
@@ -41,7 +40,7 @@ const navLinks = [
         <div className="flex h-20 items-center justify-between">
           
           {/* Logo - Stylish R + RdMoment */}
-          <Link href="/" className="flex items-baseline gap-0 group">
+          <Link href="/" className="flex items-center gap-0 group" aria-label="RdMoment Home">
             <span className="text-4xl font-serif text-amber-500 tracking-tight group-hover:text-amber-400 transition-colors">
               R
             </span>
@@ -65,9 +64,10 @@ const navLinks = [
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-amber-100/80 hover:text-amber-400 transition-colors"
+            className="md:hidden text-amber-100/80 hover:text-amber-400 transition-colors p-2 rounded-md hover:bg-amber-500/10"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -77,14 +77,25 @@ const navLinks = [
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="absolute top-20 left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-amber-900/20 md:hidden">
+        <div className="absolute top-20 left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-amber-900/20 md:hidden" role="navigation" aria-label="Mobile navigation">
           <div className="flex flex-col p-6 space-y-4">
             {navLinks.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-4 py-3 rounded-md text-base font-light tracking-wide text-amber-100/80 transition-all hover:text-amber-400 hover:bg-amber-900/10 hover:pl-6"
+                className="block px-4 py-3 rounded-md text-base font-light tracking-wide text-amber-100/80 transition-all hover:text-amber-400 hover:bg-amber-900/10 hover:pl-6 focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </header>
+  )
+}sOpen(false)}
+                className="block px-4 py-3 rounded-md text-base font-light tracking-wide text-amber-100/80 transition-all hover:text-amber-400 hover:bg-amber-900/10 hover:pl-6 focus:outline-none focus:ring-2 focus:ring-amber-500/50"
               >
                 {item.label}
               </Link>

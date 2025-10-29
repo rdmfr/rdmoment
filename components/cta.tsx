@@ -32,12 +32,12 @@ export default function CTA() {
         </div>
 
         {/* Heading */}
-        <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-amber-100 mb-6 tracking-wide leading-tight">
+        <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-amber-100 mb-6 tracking-wide leading-tight">
           Siap Membuat<br />Undangan Anda?
         </h2>
 
         {/* Description */}
-        <p className="text-base md:text-lg lg:text-xl text-amber-100/60 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+        <p className="text-base md:text-lg lg:text-xl xl:text-2xl text-amber-100/60 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
           Bergabunglah dengan ribuan pasangan yang merayakan cinta mereka bersama RdMoment.<br className="hidden md:block" />
           Mulai buat undangan sempurna Anda hari ini.
         </p>
@@ -47,7 +47,7 @@ export default function CTA() {
           
           {/* Primary Button */}
           <Link
-            href="/invitations"
+            href="/templates/create"
             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 hover:from-amber-500 hover:via-amber-400 hover:to-amber-500 text-black rounded-full font-semibold text-lg shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300 hover:scale-105"
           >
             <span>Buat Undangan Anda</span>

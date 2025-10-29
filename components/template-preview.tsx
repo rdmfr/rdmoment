@@ -9,49 +9,56 @@ interface TemplatePreviewProps {
 
 export default function TemplatePreview({ templateData }: TemplatePreviewProps) {
   const formatDate = (dateString: string) => {
+    if (!dateString) return ""
     const date = new Date(dateString)
-    return date.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })
+    return date.toLocaleDateString("id-ID", { weekday: "long", year: "numeric", month: "long", day: "numeric" })
   }
 
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8">
-      <div>
-        <div className="mb-4">
-          <h2 className="font-serif text-2xl font-bold text-foreground">Live Preview</h2>
-          <p className="text-muted-foreground">See how your invitation looks</p>
-        </div>
-        <CustomizationPanel />
-      </div>
+  const fontClass = templateData.fontStyle === 'serif' ? 'font-serif' : 'font-sans'
 
-      <div className="flex items-start justify-center">
-        <div className="phone-mockup">
-          <div className="phone-screen">
-            {/* Small invitation rendering inside the phone */}
-            <div
-              className="w-full h-full flex flex-col items-center justify-center p-6 text-center"
-              style={{
-                background: `linear-gradient(180deg, ${templateData.primaryColor} 0%, ${templateData.accentColor} 100%)`,
-              }}
-            >
-              <div className="text-sm font-medium" style={{ color: templateData.secondaryColor }}>
-                Together with their families
-              </div>
-              <h1 className="font-serif text-3xl font-bold" style={{ color: templateData.secondaryColor }}>
-                {templateData.coupleNames}
-              </h1>
-              <div className="text-sm" style={{ color: templateData.secondaryColor }}>
-                request the honor of your presence at their wedding
-              </div>
-              <div className="pt-4 space-y-1">
-                <div className="font-semibold" style={{ color: templateData.secondaryColor }}>
-                  {formatDate(templateData.eventDate)}
+  return (
+    <div className="w-full">
+      <div className="sticky top-28">
+        <h3 className="font-serif text-2xl text-amber-100 mb-4">Pratinjau Langsung</h3>
+        <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+            <div className="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+            <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+            <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+            <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+            <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white dark:bg-gray-800">
+                {/* Dynamic Preview Content */}
+                <div
+                  className={`w-full h-full flex flex-col text-center overflow-y-auto p-6 ${fontClass}`}
+                  style={{ 
+                    backgroundColor: templateData.accentColor,
+                    color: templateData.secondaryColor,
+                  }}
+                >
+                  <p className="text-xs tracking-widest uppercase" style={{ color: templateData.primaryColor }}>Anda Diundang</p>
+                  <p className="mt-4 text-sm">Untuk merayakan pernikahan</p>
+                  
+                  <div className="my-6">
+                    <h1 className="text-4xl leading-tight" style={{ color: templateData.primaryColor }}>
+                      {templateData.coupleNames || "Pengantin Pria & Wanita"}
+                    </h1>
+                  </div>
+
+                  <div className="w-full h-px my-4" style={{backgroundColor: templateData.primaryColor, opacity: 0.3}} />
+
+                  <div className="space-y-2 text-sm">
+                    <p className="font-semibold" style={{ color: templateData.primaryColor }}>{formatDate(templateData.eventDate)}</p>
+                    <p>Pukul {templateData.eventTime || "18:00"} WIB</p>
+                    <p className="pt-2 font-semibold">{templateData.venue || "Grand Ballroom"}</p>
+                    <p className="text-xs px-4">{templateData.venueAddress || "Jl. Pernikahan No. 123, Jakarta"}</p>
+                  </div>
+
+                  {templateData.includeGuestbook && (
+                    <div className="mt-auto pt-6">
+                      <button className="w-full py-2 text-xs rounded-full" style={{ backgroundColor: templateData.primaryColor, color: templateData.accentColor }}>Buku Tamu</button>
+                    </div>
+                  )}
                 </div>
-                <div className="text-sm" style={{ color: templateData.secondaryColor }}>
-                  {templateData.eventTime}
-                </div>
-              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

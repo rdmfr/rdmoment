@@ -43,7 +43,7 @@ export default function Features() {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-amber-100 mb-6 tracking-wide">
             Semua yang Anda Butuhkan
           </h2>
-          <p className="text-base md:text-lg text-amber-100/60 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-amber-100/60 max-w-3xl mx-auto font-light leading-relaxed">
             Fitur-fitur powerful yang dirancang untuk membuat undangan pernikahan Anda tak terlupakan.
           </p>
         </div>

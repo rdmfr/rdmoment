@@ -8,11 +8,11 @@ export default function CreateTemplatePage() {
   const [templateData, setTemplateData] = useState({
     name: "My Wedding Invitation",
     theme: "jawa-elegan",
-    coupleNames: "Bride & Groom",
-    eventDate: "2025-06-15",
+    coupleNames: "Pengantin Pria & Wanita",
+    eventDate: "2025-10-26",
     eventTime: "18:00",
     venue: "Grand Ballroom",
-    venueAddress: "123 Wedding Street, City",
+    venueAddress: "Jl. Pernikahan No. 123, Jakarta",
     primaryColor: "#D4AF37",
     secondaryColor: "#2C1810",
     accentColor: "#F5E6D3",
@@ -23,18 +23,21 @@ export default function CreateTemplatePage() {
   })
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="grid lg:grid-cols-2 gap-6 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
-        {/* Builder Panel */}
-        <div className="lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto">
-          <TemplateBuilder templateData={templateData} setTemplateData={setTemplateData} />
-        </div>
+    <div className="min-h-screen bg-black">
+      <CreateHeader />
+      <main className="max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 items-start">
+          {/* Builder Panel */}
+          <div className="lg:sticky top-28">
+            <TemplateBuilder templateData={templateData} setTemplateData={setTemplateData} />
+          </div>
 
-        {/* Preview Panel */}
-        <div className="lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto">
-          <TemplatePreview templateData={templateData} />
+          {/* Preview Panel */}
+          <div className="lg:sticky top-28">
+            <TemplatePreview templateData={templateData} />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   )
 }

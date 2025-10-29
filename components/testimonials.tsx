@@ -37,7 +37,7 @@ export default function Testimonials() {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-amber-100 mb-6 tracking-wide">
             Kisah Cinta Mereka
           </h2>
-          <p className="text-base md:text-lg text-amber-100/60 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-amber-100/60 max-w-3xl mx-auto font-light leading-relaxed">
             Dengarkan dari pasangan yang merayakan cinta mereka bersama RdMoment
           </p>
         </div>

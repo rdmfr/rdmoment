@@ -11,40 +11,34 @@ export default function TemplatesPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-black text-amber-100">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
+      <div className="sticky top-0 z-40 bg-black/80 backdrop-blur-lg border-b border-amber-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="font-serif text-3xl font-bold text-foreground">Invitation Templates</h1>
-              <p className="text-muted-foreground mt-1">Choose a template or create from scratch</p>
+              <h1 className="font-serif text-4xl font-normal text-amber-100">Galeri Template</h1>
+              <p className="text-amber-100/60 mt-1 font-light">Pilih template atau buat dari awal.</p>
             </div>
             <Link
               href="/templates/create"
-              className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors font-medium"
+              className="flex items-center gap-2 px-5 py-2 bg-amber-500 text-black rounded-full hover:bg-amber-400 transition-colors font-semibold shadow-lg shadow-amber-500/20"
             >
               <Plus size={20} />
-              Create New
+              Buat Baru
             </Link>
           </div>
 
-          {/* Search and Filter */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
-              <input
-                type="text"
-                placeholder="Search templates..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-              />
-            </div>
-            <button className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg hover:bg-muted transition-colors">
-              <Filter size={20} />
-              <span className="hidden sm:inline">Filters</span>
-            </button>
+          {/* Search */}
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-100/50" size={20} />
+            <input
+              type="text"
+              placeholder="Cari template..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 bg-zinc-900/50 border-2 border-amber-900/30 rounded-full text-amber-100 placeholder:text-amber-100/50 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all"
+            />
           </div>
         </div>
       </div>

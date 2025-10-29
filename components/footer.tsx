@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand Column - Larger */}
           <div className="md:col-span-4">
             {/* Logo */}
-            <Link href="/" className="inline-flex items-baseline gap-0 group mb-4">
+            <Link href="/" className="inline-flex items-center gap-0 group mb-4">
               <span className="text-4xl font-serif text-amber-500 tracking-tight group-hover:text-amber-400 transition-colors">
                 R
               </span>
@@ -79,76 +79,9 @@ export default function Footer() {
                     Fitur
                   </Link>
                 </li>
-                <li>
-                  <Link href="/pricing" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Harga
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/templates" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Template
-                  </Link>
-                </li>
               </ul>
             </div>
 
-            {/* Company Column */}
-            <div>
-              <h4 className="font-semibold text-amber-100 mb-4 text-sm tracking-wider uppercase">
-                Perusahaan
-              </h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <Link href="/about" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Tentang Kami
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Kontak
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Karir
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal Column */}
-            <div>
-              <h4 className="font-semibold text-amber-100 mb-4 text-sm tracking-wider uppercase">
-                Legal
-              </h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <Link href="/privacy" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Privasi
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Syarat & Ketentuan
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/cookies" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Cookies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/refund" className="text-amber-100/60 hover:text-amber-400 transition-colors font-light">
-                    Refund Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
 
@@ -164,7 +97,7 @@ export default function Footer() {
             {/* Made with Love */}
             <div className="flex items-center gap-2 text-sm text-amber-100/50 font-light">
               <span>Made with</span>
-              <Heart className="w-4 h-4 text-amber-500 fill-amber-500 animate-pulse" />
+              <Heart className="w-4 h-4 text-amber-500 fill-amber-500 animate-pulse" aria-hidden="true" />
               <span>in Indonesia</span>
             </div>
           </div>

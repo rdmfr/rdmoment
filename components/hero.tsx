@@ -28,9 +28,9 @@ const Hero: React.FC = () => {
         
         {/* KARTU UNDANGAN 3D dengan Glow Effect */}
         <div className="group mb-12 md:mb-16 perspective-[1000px]">
-          <div 
+          <div
             className="
-              relative w-[300px] h-[450px] sm:w-[340px] sm:h-[510px] md:w-[380px] md:h-[570px]
+              relative w-[300px] h-[450px] sm:w-[340px] sm:h-[510px] md:w-[380px] md:h-[570px] lg:w-[420px] lg:h-[630px]
               transform transition-all duration-700 ease-out
               hover:scale-105
               [transform:perspective(1200px)_rotateY(-8deg)_rotateX(5deg)]
@@ -46,60 +46,13 @@ const Hero: React.FC = () => {
             {/* Card container */}
             <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-amber-500/30 shadow-2xl bg-gradient-to-br from-zinc-900 via-black to-zinc-900">
               
-              {/* Placeholder - Ganti dengan gambar undangan asli */}
-              <div className="w-full h-full flex flex-col items-center justify-center p-10 text-center space-y-6">
-                
-                {/* Top decoration */}
-                <div className="absolute top-0 left-0 right-0 h-24 flex items-start justify-between p-6">
-                  <svg className="w-20 h-20 text-amber-500/40" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 10 L55 30 L75 25 L60 40 L75 55 L55 50 L50 70 L45 50 L25 55 L40 40 L25 25 L45 30 Z" />
-                  </svg>
-                  <svg className="w-20 h-20 text-amber-500/40" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 10 L55 30 L75 25 L60 40 L75 55 L55 50 L50 70 L45 50 L25 55 L40 40 L25 25 L45 30 Z" />
-                  </svg>
-                </div>
-
-                {/* Icon */}
-                <div className="pt-12">
-                  <svg className="w-12 h-12 text-amber-500/60 mx-auto" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L9.5 8.5L3 9l5 4.5L6.5 21L12 17.5L17.5 21L16 13.5L21 9l-6.5-.5L12 2z"/>
-                  </svg>
-                </div>
-                
-                <div className="space-y-2">
-                  <p className="text-amber-500/70 text-xs tracking-[0.3em] uppercase">Wedding Invitation</p>
-                </div>
-                
-                {/* Monogram */}
-                <div className="w-28 h-28 rounded-full border-2 border-amber-500/40 flex items-center justify-center">
-                  <span className="text-4xl font-serif text-amber-500">AG</span>
-                </div>
-                
-                <h3 className="text-2xl font-serif text-amber-100 tracking-wider">JAWA ELEGAN</h3>
-                
-                {/* Dates */}
-                <div className="flex items-center gap-6 text-xs text-amber-500/70 pt-2">
-                  <div className="text-center">
-                    <p className="font-light mb-1">Akad Nikah</p>
-                    <p className="font-normal">20 • 10 • 24</p>
-                  </div>
-                  <div className="h-12 w-px bg-amber-500/30" />
-                  <div className="text-center">
-                    <p className="font-light mb-1">Resepsi</p>
-                    <p className="font-normal">20 • 10 • 24</p>
-                  </div>
-                </div>
-
-                {/* Bottom decoration */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 flex items-end justify-between p-6">
-                  <svg className="w-20 h-20 text-amber-500/40" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 10 L55 30 L75 25 L60 40 L75 55 L55 50 L50 70 L45 50 L25 55 L40 40 L25 25 L45 30 Z" />
-                  </svg>
-                  <svg className="w-20 h-20 text-amber-500/40" viewBox="0 0 100 100" fill="currentColor">
-                    <path d="M50 10 L55 30 L75 25 L60 40 L75 55 L55 50 L50 70 L45 50 L25 55 L40 40 L25 25 L45 30 Z" />
-                  </svg>
-                </div>
-              </div>
+              <Image
+                src="/elegant-javanese-wedding-invitation.jpg"
+                alt="Contoh Undangan Pernikahan Jawa Elegan"
+                fill
+                className="object-cover"
+                priority
+              />
               
               {/* Edge highlight */}
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-amber-500/20 pointer-events-none" />
@@ -111,13 +64,13 @@ const Hero: React.FC = () => {
         </div>
 
         {/* JUDUL UTAMA */}
-        <h1 className="mb-6 max-w-5xl text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-amber-100 leading-tight tracking-wide">
-          Celebrate Love, Honor Culture.
+        <h1 className="mb-6 max-w-5xl text-center font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-amber-100 leading-tight tracking-wide">
+          Rayakan Cinta, Lestarikan Budaya.
         </h1>
 
         {/* SUB-JUDUL */}
-        <p className="mb-12 max-w-2xl text-center font-light text-base md:text-lg text-amber-100/60 tracking-wide leading-relaxed">
-          Discover bespoke digital invitations crafted with tradition and modern artistry.
+        <p className="mb-12 max-w-3xl text-center font-light text-base md:text-lg lg:text-xl text-amber-100/60 tracking-wide leading-relaxed">
+          Temukan undangan digital eksklusif yang dirancang dengan sentuhan tradisi dan seni modern.
         </p>
 
         {/* TOMBOL CTA */}
@@ -157,7 +110,7 @@ const Hero: React.FC = () => {
               hover:scale-105
             "
           >
-            <Link href="#order">Pesan Sekarang</Link>
+            <Link href="#harga">Pesan Sekarang</Link>
           </Button>
 
         </div>
