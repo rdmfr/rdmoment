@@ -1,37 +1,36 @@
-import { Star, Quote } from "lucide-react"
+import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Priya & Arjun",
-    location: "New Delhi, India",
-    text: "RdMoment membuat undangan pernikahan kami sangat personal dan indah. Tamu-tamu kami sangat menyukai fitur buku tamu interaktif!",
+    name: 'Priya & Arjun',
+    location: 'New Delhi, India',
+    text: 'RdMoment membuat undangan pernikahan kami sangat personal dan indah. Tamu-tamu kami sangat menyukai fitur buku tamu interaktif!',
     rating: 5,
   },
   {
-    name: "Yuki & Takeshi",
-    location: "Tokyo, Japan",
-    text: "Tema Sakura sempurna menangkap warisan budaya kami. Opsi kustomisasi tidak terbatas dan sangat intuitif.",
+    name: 'Yuki & Takeshi',
+    location: 'Tokyo, Japan',
+    text: 'Tema Sakura sempurna menangkap warisan budaya kami. Opsi kustomisasi tidak terbatas dan sangat intuitif.',
     rating: 5,
   },
   {
-    name: "Siti & Budi",
-    location: "Bali, Indonesia",
-    text: "Kami menggabungkan tema Jawa Elegan dengan foto dan musik kami sendiri. Terasa seperti cerminan sejati dari kisah cinta kami.",
+    name: 'Siti & Budi',
+    location: 'Bali, Indonesia',
+    text: 'Kami menggabungkan tema Jawa Elegan dengan foto dan musik kami sendiri. Terasa seperti cerminan sejati dari kisah cinta kami.',
     rating: 5,
   },
   {
-    name: "Maria & Carlos",
-    location: "Barcelona, Spain",
-    text: "Kemudahan berbagi via QR code dan media sosial sangat memudahkan untuk tamu internasional kami.",
+    name: 'Maria & Carlos',
+    location: 'Barcelona, Spain',
+    text: 'Kemudahan berbagi via QR code dan media sosial sangat memudahkan untuk tamu internasional kami.',
     rating: 5,
   },
-]
+];
 
 export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 px-6 sm:px-8 lg:px-12 bg-black">
       <div className="max-w-7xl mx-auto">
-        
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-amber-100 mb-6 tracking-wide">
@@ -103,5 +102,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

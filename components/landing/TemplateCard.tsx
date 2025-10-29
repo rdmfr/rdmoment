@@ -1,8 +1,8 @@
 // File: components/landing/TemplateCard.tsx
 
-import React from "react";
-import Image from "next/image"; // Gunakan Next Image untuk optimasi
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image'; // Gunakan Next Image untuk optimasi
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -10,9 +10,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"; // Impor komponen Card shadcn/ui
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge"; // Untuk tag tema
+} from '@/components/ui/card'; // Impor komponen Card shadcn/ui
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge'; // Untuk tag tema
 
 // Definisikan tipe Props untuk TemplateCard
 export interface TemplateCardProps {
@@ -45,7 +45,9 @@ const TemplateCard: React.FC<TemplateCardProps> = ({
       */}
       <CardHeader className="p-0">
         {/* Gambar Preview */}
-        <div className="relative aspect-[3/2] w-full"> {/* Rasio gambar 3:2 */}
+        <div className="relative aspect-[3/2] w-full">
+          {' '}
+          {/* Rasio gambar 3:2 */}
           <Image
             src={previewImageUrl}
             alt={`Preview ${name}`}
@@ -66,7 +68,9 @@ const TemplateCard: React.FC<TemplateCardProps> = ({
         {/* Tag Tema */}
         <div className="mb-4 flex flex-wrap gap-2">
           {themeTags.map((tag) => (
-            <Badge key={tag} variant="secondary"> {/* Badge abu-abu */}
+            <Badge key={tag} variant="secondary">
+              {' '}
+              {/* Badge abu-abu */}
               {tag}
             </Badge>
           ))}

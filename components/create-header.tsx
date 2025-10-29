@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { ArrowLeft, Eye, CheckCircle } from 'lucide-react'
+import Link from 'next/link';
+import { ArrowLeft, Eye, CheckCircle } from 'lucide-react';
 
 export default function CreateHeader() {
   return (
@@ -10,12 +10,23 @@ export default function CreateHeader() {
         <div className="flex h-20 items-center justify-between">
           {/* Left side: Logo and Back link */}
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-0 group" aria-label="RdMoment Home">
-              <span className="text-4xl font-serif text-amber-500 tracking-tight group-hover:text-amber-400 transition-colors">R</span>
-              <span className="text-xl font-light text-amber-100 tracking-wide group-hover:text-white transition-colors">RdMoment.</span>
+            <Link
+              href="/"
+              className="flex items-center gap-0 group"
+              aria-label="RdMoment Home"
+            >
+              <span className="text-4xl font-serif text-amber-500 tracking-tight group-hover:text-amber-400 transition-colors">
+                R
+              </span>
+              <span className="text-xl font-light text-amber-100 tracking-wide group-hover:text-white transition-colors">
+                RdMoment.
+              </span>
             </Link>
             <div className="w-px h-8 bg-amber-200/20 hidden md:block" />
-            <Link href="/templates" className="hidden md:flex items-center gap-2 text-sm text-amber-100/80 hover:text-amber-400 transition-colors">
+            <Link
+              href="/templates"
+              className="hidden md:flex items-center gap-2 text-sm text-amber-100/80 hover:text-amber-400 transition-colors"
+            >
               <ArrowLeft size={16} />
               <span>Kembali ke Galeri</span>
             </Link>
@@ -35,5 +46,5 @@ export default function CreateHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

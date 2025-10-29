@@ -1,8 +1,8 @@
 // File: components/landing/HeroSection.tsx
 
-import React from "react";
-import { Button } from "@/components/ui/button"; // Impor Tombol shadcn/ui
-import Link from "next/link";
+import React from 'react';
+import { Button } from '@/components/ui/button'; // Impor Tombol shadcn/ui
+import Link from 'next/link';
 
 /**
  * Komponen HeroSection untuk landing page RdMoment.
@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
       {/* Container Utama: 
         - bg-background (Otomatis jadi #111827 dari globals.css)
       */}
-      
+
       {/* [OPSIONAL] Pola Emas di Latar Belakang */}
       {/* Ganti '/images/gold-pattern.svg' dengan path ke aset Anda */}
       {/*
@@ -25,7 +25,6 @@ const HeroSection: React.FC = () => {
       */}
 
       <div className="z-10 flex flex-col items-center p-8">
-        
         {/* Judul: 
           - font-serif (Jadi Playfair Display dari layout.tsx)
           - text-primary (Jadi Emas #D4AF37 dari globals.css)
@@ -39,8 +38,8 @@ const HeroSection: React.FC = () => {
           - text-foreground (Jadi Putih Pucat #F3F4F6 dari globals.css)
         */}
         <p className="mb-8 max-w-2xl font-sans text-lg text-foreground/90 md:text-xl">
-          Temukan undangan digital premium yang memadukan desain modern
-          dengan kekayaan tradisi Indonesia.
+          Temukan undangan digital premium yang memadukan desain modern dengan
+          kekayaan tradisi Indonesia.
         </p>
 
         {/* Tombol CTA: 

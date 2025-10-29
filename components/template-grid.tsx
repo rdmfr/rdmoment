@@ -1,19 +1,25 @@
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
-import { themes as templates } from "@/lib/data"
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+import { themes as templates } from '@/lib/data';
 
 interface TemplateGridProps {
-  searchQuery: string
-  selectedCategory: string
+  searchQuery: string;
+  selectedCategory: string;
 }
 
-export default function TemplateGrid({ searchQuery, selectedCategory }: TemplateGridProps) {
+export default function TemplateGrid({
+  searchQuery,
+  selectedCategory,
+}: TemplateGridProps) {
   const filtered = templates.filter((template) => {
-    const matchesSearch = template.name.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesCategory = selectedCategory === "All" || template.category === selectedCategory
-    return matchesSearch && matchesCategory
-  })
+    const matchesSearch = template.name
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    const matchesCategory =
+      selectedCategory === 'All' || template.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -25,7 +31,7 @@ export default function TemplateGrid({ searchQuery, selectedCategory }: Template
         >
           <div className="relative overflow-hidden rounded-lg mb-4 h-72 bg-zinc-900 border-2 border-amber-900/30 group-hover:border-amber-500/50 transition-all duration-300">
             <Image
-              src={template.image || "/placeholder.svg"}
+              src={template.image || '/placeholder.svg'}
               alt={template.name}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -47,5 +53,5 @@ export default function TemplateGrid({ searchQuery, selectedCategory }: Template
         </Link>
       ))}
     </div>
-  )
+  );
 }

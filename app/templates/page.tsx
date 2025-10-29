@@ -1,14 +1,14 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import Link from "next/link"
-import { Plus, Search, Filter } from "lucide-react"
-import TemplateGrid from "@/components/template-grid"
-import TemplateFilters from "@/components/template-filters"
+import { useState } from 'react';
+import Link from 'next/link';
+import { Plus, Search, Filter } from 'lucide-react';
+import TemplateGrid from '@/components/template-grid';
+import TemplateFilters from '@/components/template-filters';
 
 export default function TemplatesPage() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("All")
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   return (
     <main className="min-h-screen bg-black text-amber-100">
@@ -17,8 +17,12 @@ export default function TemplatesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="font-serif text-4xl font-normal text-amber-100">Galeri Template</h1>
-              <p className="text-amber-100/60 mt-1 font-light">Pilih template atau buat dari awal.</p>
+              <h1 className="font-serif text-4xl font-normal text-amber-100">
+                Galeri Template
+              </h1>
+              <p className="text-amber-100/60 mt-1 font-light">
+                Pilih template atau buat dari awal.
+              </p>
             </div>
             <Link
               href="/templates/create"
@@ -31,7 +35,10 @@ export default function TemplatesPage() {
 
           {/* Search */}
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-100/50" size={20} />
+            <Search
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-amber-100/50"
+              size={20}
+            />
             <input
               type="text"
               placeholder="Cari template..."
@@ -45,9 +52,15 @@ export default function TemplatesPage() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <TemplateFilters selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
-        <TemplateGrid searchQuery={searchQuery} selectedCategory={selectedCategory} />
+        <TemplateFilters
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+        />
+        <TemplateGrid
+          searchQuery={searchQuery}
+          selectedCategory={selectedCategory}
+        />
       </div>
     </main>
-  )
+  );
 }
